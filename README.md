@@ -93,12 +93,6 @@ or you can [clone](https://github.com/anfelespitia/memorygame) it.
 | Comments              | Comments are present and effectively explain longer code procedure when necessary. |
 | Code Quality          | Code is formatted with consistent, logical, and easy-to-read formatting as described in the [Udacity JavaScript Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html). |
 
-## Acknowledgements
-
--   [jQuery](https://jquery.com), The fast, small, and feature-rich JavaScript library which saved my time.
--   [Font Awesome](https://fontawesome.com/), for the vector icons
--   [Animate.css](https://github.com/daneden/animate.css), for my project cool, fun, and cross-browser animations.
--   ES06 thanks for the template literal and for-of loop ...
 
 ## Contributing
 
