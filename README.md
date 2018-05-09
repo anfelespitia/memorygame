@@ -36,7 +36,7 @@ And there is a leaderboard :
 
 -   Game start screen
 
-![Start Screen](screenshots/game-start.png "Start Screen")
+![Start Screen](Start Screen.png)
 
 -   Incorrect match action
 
