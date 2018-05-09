@@ -36,11 +36,8 @@ And there is a leaderboard :
 
 -   Game start screen
 
-(<img width="805" alt="start screen" src="https://user-images.githubusercontent.com/39103110/39822499-03662fc4-53ab-11e8-82d0-42fc40a7e136.png">)
+<img width="805" alt="start screen" src="https://user-images.githubusercontent.com/39103110/39822499-03662fc4-53ab-11e8-82d0-42fc40a7e136.png">
 
--   Incorrect match action
-
-![Incorrect match](screenshots/incorrect-match.png "incorrect match")
 
 -   Correct match action
 
@@ -50,13 +47,7 @@ And there is a leaderboard :
 
 ![Win Screen](screenshots/game-win.png "game win")
 
--   High scores if you didn't get a high one.
 
-![High scores](screenshots/high-scores.png "High scores")
-
--   High scores if you successfully get a high one.
-
-![New high score](screenshots/new-high-score.png "New high score")
 
 ### Game Functionality
 
