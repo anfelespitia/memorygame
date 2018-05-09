@@ -5,7 +5,7 @@ Udacity (Front-End Web Developer Nanodegree Project): Memory Game.
 ## Table of Contents
 
 * [Project Overview](#project-overview)
-* [How to play](#How-to-play)
+* [How to game works](#How-to-game-works)
 * [Project Specifications](#project-specifications)
 * [Acknowledgements](#acknowledgements)
 * [Contributing](#contributing)
