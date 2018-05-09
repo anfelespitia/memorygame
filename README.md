@@ -41,11 +41,14 @@ And there is a leaderboard :
 
 -   Correct match action
 
-![Correct match](screenshots/correct-match.png "correct match")
+<img width="780" alt="correct match action" src="https://user-images.githubusercontent.com/39103110/39823893-506e951a-53ae-11e8-9a57-62fe8b3fe8f6.png">
+
+
+
 
 -   Game win action
 
-![Win Screen](screenshots/game-win.png "game win")
+<img width="1001" alt="game win action" src="https://user-images.githubusercontent.com/39103110/39823898-53a3af86-53ae-11e8-818a-b9b573d346a5.png">
 
 
 
