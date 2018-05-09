@@ -62,7 +62,7 @@ In the real-life game, players flip over cards to locate the pairs that match. T
 
 ## How to play
 
-You can play the game from [here](https://magdi-mohammed.github.io/udacity-fend-project-memory-game/)
+You can play the game from [here](https://s.codepen.io/anfelespitia2/debug/ELQXMP/gaMeYJqKxPjM)
 or you can [clone](https://github.com/magdi-mohammed/udacity-fend-project-memory-game) it.
 
 ## Project Specifications
