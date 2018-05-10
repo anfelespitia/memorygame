@@ -62,7 +62,7 @@ In the real-life game, players flip over cards to locate the pairs that match. T
 
 ## How to play
 
-You can play the game from [here](https://s.codepen.io/anfelespitia2/debug/ELQXMP/gaMeYJqKxPjM)
+You can play the game from [here](https://anfelespitia.github.io/memorygame/)
 or you can [clone](https://github.com/anfelespitia/memorygame) it.
 
 ## Project Specifications
