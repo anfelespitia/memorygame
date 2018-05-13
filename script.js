@@ -14,7 +14,7 @@ const winnerMessage = document.querySelector('#winner-message');
 const playAgain = document.querySelector('.playAgain');
 
 let openCards = [];
-let matchedCards = 0;
+let matchedCards = 1;
 let star=3;
 moves.textContent = 0;
 let moveCounter = moves.textContent;
