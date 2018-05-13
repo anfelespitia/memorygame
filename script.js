@@ -9,49 +9,50 @@ const stars = document.querySelector(".stars");
 const moves = document.querySelector(".moves");
 const restart = document.querySelector(".restart");
 const deck = document.querySelector(".deck");
-const winnerModal = document.querySelector('#winner-modal');
-const winnerMessage = document.querySelector('#winner-message');
-const playAgain = document.querySelector('.playAgain');
+const winnerModal = document.querySelector("#winner-modal");
+const winnerMessage = document.querySelector("#winner-message");
+const playAgain = document.querySelector(".playAgain");
 
 let openCards = [];
-let matchedCards = 1;
+let matchedCards = 0;
 let star=3;
 moves.textContent = 0;
 let moveCounter = moves.textContent;
 let interval;
 let second = 0;
 let minute = 0;
-let timer = document.querySelector('.timer');
+let timer = document.querySelector(".timer");
 let timeStart = false;
 
 
 
-restart.addEventListener('click', gameStart); /*Restart Button*/
+restart.addEventListener("click", gameStart); /*Restart Button*/
 
 function gameStart(){
   stopTimer();
   timeStart = false;
   timer.textContent = minute+"minutes "+second+"seconds";
-  let shuffledCards = shuffle(cardList);  
-  for (let i=0; i<cardList.length; i++){  
-    let deckListElements = deck.getElementsByTagName("li"); 
-    let listElementsClass = deckListElements[i].getAttribute("class");
-    deckListElements[i].className='';
-    deckListElements[i].classList.add('card');
+  let shuffledCards =shuffle(cardList);
+    for(let i=0; i<cardList.length;i++){
+    let deckListElements =
+    deck.getElementsByTagName("li");
+    let listElementsClass=
+deckListElements[i].getAttribute("class");
+deckListElements[i].className="";
+deckListElements[i].classList.add("card");
 
-    let deckIconElements = deck.getElementsByTagName("i"); /*shuffle the icons*/
+    let deckIconElements= deck.getElementsByTagName("i"); /*shuffle the icons*/
     let iconElementsClass = deckIconElements[i].getAttribute("class");
-    deckIconElements[i].className='';
-    deckIconElements[i].classList.add('fa',shuffledCards[i]);
+    deckIconElements[i].className="";
+    deckIconElements[i].classList.add("fa",shuffledCards[i]);
     }
-  
   openCards = [];
-  matchedCards = 0;
+  matchedCards = 1;
   moves.textContent = 0;
   moveCounter = moves.textContent;
   stars.innerHTML='<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
-  star='3';
-  };
+  star="3";
+  }
 
 /*
  * Display the cards on the page
@@ -78,62 +79,59 @@ function shuffle(array) {
 
 /*start game self invoked function */
 gameStart();
-
-
-deck.addEventListener('click',function(event){
+deck.addEventListener("click",function(event){
   if (!timeStart) {
     startTimer();
     timeStart= true;
-  };
+  }
   let card = event.target;
   if (openCards.length<2){
-    if (!card.classList.contains('open')){ 
-      showSymbol(card); 
-      addCardOpen(card); 
-    }};
+    if (!card.classList.contains("open")){
+      showSymbol(card);
+      addCardOpen(card);
+    }}
   if (openCards.length===2){
     if (openCards[0].innerHTML === openCards[1].innerHTML){
-      
       matchLock();
       matchedCards++;
      }
     else {
-      matchFail()
-      };
+      matchFail();
+      }
   moveCounter++;
-  moves.innerText = moveCounter 
+  moves.innerText = moveCounter;
   if (moves.innerText > 22) {
       stars.innerHTML='<li><i class="fa fa-star"></i></li>';
-      star='1';
+      star="1";
     }
     else if (moves.innerText > 11){
       stars.innerHTML='<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
-      star='2';
+      star="2";
     }
     else {
       stars.innerHTML='<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
-      star='3';
+      star="3";
     }
-  }; 
-  gameOver() 
+  }
+  gameOver();
 });
 
 function addCardOpen(card){
   openCards.push(card);
-};
+}
 
 function showSymbol(card){
-  card.classList.add('open');
-  card.classList.add('show');
- };
+  card.classList.add("open");
+  card.classList.add("show");
+ }
 
 function matchLock(){
-  openCards[0].classList.add('match');
-  openCards[0].classList.remove('open','show');
-  openCards[1].classList.add('match');
-  openCards[1].classList.remove('open','show');
+  openCards[0].classList.add("match");
+  openCards[0].classList.remove("open","show");
+  openCards[1].classList.add("match");
+  openCards[1].classList.remove("open","show");
   openCards=[];
-};
+}
 
 function matchFail(){
   setTimeout(function(){
@@ -141,16 +139,15 @@ function matchFail(){
     openCards[1].classList.remove("show", "open");
     openCards = [];
   },600);
-};
+}
 
 function gameOver(){
   if (matchedCards === 8){
-    winnerModal.style.display='block';
-    winnerMessage.textContent= "You have won! You have match all the cards in "+minute+" minutes and "+second+" seconds, in only  "+moveCounter+" moves and you collected "+star+" stars"+"!"; 
+    winnerModal.style.display="block";
+    winnerMessage.textContent= "You have won! You have match all the cards in "+minute+" minutes and "+second+" seconds,in only "+moveCounter+" moves and you collected" +star+" stars"+"!";
     stopTimer();
   }
-};
-
+}
 
 /*Timer*/
 
@@ -163,7 +160,7 @@ function startTimer(){
             second=0;
         }
     },1000);
-};
+}
 
 
 function stopTimer(){
@@ -173,9 +170,9 @@ function stopTimer(){
 }
 
 /*Restarting*/
-restart.addEventListener('click', gameStart());
+restart.addEventListener("click", gameStart());
 
-playAgain.addEventListener('click',function(){
+playAgain.addEventListener("click",function(){
   winnerModal.style.display = "none";
   gameStart();
 });
