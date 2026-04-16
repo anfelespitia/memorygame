@@ -1,108 +1,63 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Memory Game </title>
-  
- 
-</head>
-
-<body>
-
-  <html lang="en">
-<head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Card Game</title>
-    <meta name="description" content="">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
- <!-- Modal content -->
-     <div id="winner-modal" class="modal">
+    <div id="winner-modal" class="modal">
         <div id="winner-modal-content" class="modal-style">
             <div class="modal-content">
-            <h3>You are Awesome!</h3>
-            <p id="winner-message">Test</p>
-           <button class="playAgain">Play Again</button>
+                <h3>¡Eres increíble!</h3>
+                <p id="winner-message">Estadísticas de tu partida</p>
+                <button class="playAgain">Jugar de nuevo</button>
             </div>
-           
         </div>
     </div>
-<!-- Score Panel -->
+
     <div class="container">
         <header>
             <h1>Matching Game</h1>
         </header>
 
         <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        	</ul>
+            <ul class="stars">
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+            </ul>
 
-        	<span class="moves">3</span> Moves
-          <span class="timer"> 0 min 0 sec</span>
-          
+            <span class="moves">0</span> Movimientos
+            <span class="timer">0 min 0 sec</span>
 
-            <div class="restart">Restart
-        		<i class="fa fa-repeat"></i>
-        	</div>
+            <div class="restart">
+                Reiniciar <i class="fa fa-repeat"></i>
+            </div>
         </section>
-<!-- Board -->
+
         <ul class="deck">
-            <li class="card">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card match">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card open show">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card">
-                <i class="fa fa-cube"></i>
-            </li>
+            <li class="card"><i class="fa fa-diamond"></i></li>
+            <li class="card"><i class="fa fa-paper-plane-o"></i></li>
+            <li class="card"><i class="fa fa-anchor"></i></li>
+            <li class="card"><i class="fa fa-bolt"></i></li>
+            <li class="card"><i class="fa fa-cube"></i></li>
+            <li class="card"><i class="fa fa-anchor"></i></li>
+            <li class="card"><i class="fa fa-leaf"></i></li>
+            <li class="card"><i class="fa fa-bicycle"></i></li>
+            <li class="card"><i class="fa fa-diamond"></i></li>
+            <li class="card"><i class="fa fa-bomb"></i></li>
+            <li class="card"><i class="fa fa-leaf"></i></li>
+            <li class="card"><i class="fa fa-bomb"></i></li>
+            <li class="card"><i class="fa fa-bolt"></i></li>
+            <li class="card"><i class="fa fa-bicycle"></i></li>
+            <li class="card"><i class="fa fa-paper-plane-o"></i></li>
+            <li class="card"><i class="fa fa-cube"></i></li>
         </ul>
     </div>
 
@@ -110,7 +65,7 @@
     <script src="script.js"></script>
 </body>
 </html>
- 
-</body>
+           
 
-</html>
+           
+   
