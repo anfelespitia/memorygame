@@ -8,17 +8,14 @@ html {
     box-sizing: inherit;
 }
 
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     background: #ffffff url('../img/geometry2.png'); 
     font-family: 'Coda', cursive; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Centra el juego verticalmente en la pantalla */
+    margin: 0;
 }
 
 .container {
@@ -29,13 +26,11 @@ body {
 }
 
 h1 {
-    font-family: 'open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Corregido 'open' por 'Open' */
     font-weight: 300;
 }
 
-/*
-* Styles for the deck of cards
-*/
+/* --- DECK DE CARTAS --- */
 
 .deck {
     width: 660px;
@@ -63,134 +58,148 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    transition: transform 0.3s ease, background 0.3s ease; /* Transición suave */
 }
 
+/* Efecto de rotación al abrir */
 .deck .card.open {
-    transform: rotateY(0);
+    transform: rotateY(180deg); 
     background: #02b3e4;
     cursor: default;
 }
 
 .deck .card.show {
     font-size: 33px;
+    transform: rotateY(0); /* Vuelve a 0 para mostrar el icono */
 }
 
 .deck .card.match {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
+    animation: pulse 0.5s; /* Animación de éxito */
 }
 
 .deck .card.wrong {
-  background: red;
+    background: #e74c3c; /* Un rojo más estético */
+    animation: shake 0.4s; /* Animación de error */
 }
 
-/*
- * Styles for the Score Panel
- */
+/* --- ANIMACIONES --- */
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* --- SCORE PANEL --- */
 
 .score-panel {
     text-align: left;
-    width: 345px;
-    margin-bottom: 10px;
+    width: 500px; /* Un poco más ancho para que no se amontone el timer */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .score-panel .stars {
     margin: 0;
     padding: 0;
     display: inline-block;
-    margin: 0 5px 0 0;
 }
 
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
+    color: #f1c40f; /* Color dorado para las estrellas */
 }
 
 .score-panel .restart {
-    float: right;
     cursor: pointer;
+    transition: color 0.2s;
 }
 
-/*
- * Styles for the modal
- */
-
-#winner-modal {
-    display: none;
+.score-panel .restart:hover {
+    color: #02ccba;
 }
+
+/* --- MODAL --- */
 
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 1; 
+    z-index: 10; 
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    background-color: rgba(0,0,0,0.6); /* Más oscuro para resaltar el modal */
 }
 
 .modal-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    font-size: 20px;
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
 }
+
 .playAgain {
-    background-color:#02b3e4;
+    background-color: #02b3e4;
     border: none;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
     cursor: pointer;
+    transition: background 0.3s;
 }
-  
-/*
-responsive code
-*/
+
+.playAgain:hover {
+    background-color: #0288ad;
+}
+
+/* --- RESPONSIVE --- */
 
 @media screen and (max-width: 800px) {
     .deck {
-        width: 400px;
-        min-height: 400px;
-        padding: 22px;
+        width: 450px;
+        min-height: 450px;
     }
 
     .deck .card {
-        height: 75px;
-        width: 75px;
+        height: 90px;
+        width: 90px;
     }
 }
 
 @media screen and (max-width: 450px) {
     .deck {
-        width: 250px;
-        min-height: 250px;
+        width: 320px;
+        min-height: 320px;
         padding: 15px;
     }
 
     .deck .card {
-        height: 50px;
-        width: 50px;
+        height: 65px;
+        width: 65px;
     }
 
     .score-panel {
-        text-align: left;
-        width: 150px;
-        margin-bottom: 10px;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
     }
 }
